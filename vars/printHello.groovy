@@ -1,3 +1,3 @@
 def call() {
-    execute( [ 'bash', '-c', 'echo hello' ] )
+    sh "echo hello from $(hostname)"
 }
