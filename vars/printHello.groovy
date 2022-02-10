@@ -1,3 +1,3 @@
 def call() {
-    sh "echo hello from $(hostname)"
+    sh 'echo "hello from $(hostname)"'
 }
