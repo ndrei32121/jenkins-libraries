@@ -1,8 +1,8 @@
 def call(Closure body) {
     def logs = []
-    logs << "Done with tests"
+    logs << "Start with tests"
     body()
-    sh(script: "touch /home/vagrant/logFileGroovy.log && chmod ugo+rw /home/vagrant/logFileGroovy.log && echo $pwd")
-    File logFile = new File("/home/vagrant/logFileGroovy.log")
-    logs.each { logFile.append("$it\n")}
+    logs << "Done with tests"
+    logs.each { writeFile(file: 'readme.txt', text: "$it\n") }
+    
 }
