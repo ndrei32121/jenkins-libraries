@@ -1,4 +1,4 @@
-def call(String[] logs, Closure body) {
+def call(Closure body) {
     logs << "Done with tests"
     body()
     File logFile = new File("./logFileGroovy.log")
