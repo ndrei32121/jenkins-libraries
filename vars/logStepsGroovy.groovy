@@ -5,8 +5,8 @@ def call(Closure body) {
     logs << "Done with tests"
     
     logs.each { 
+        writeFile(file: 'logGroovyFile.log', text: "$readcontent\n$it\n")
         def readContent = readFile "logGroovyFile.log"
-        writeFile(file: 'logGroovyFile.log', text: "$readcontent\n$it\n") 
     }
     
 }
