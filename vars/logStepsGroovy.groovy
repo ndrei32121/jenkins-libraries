@@ -3,11 +3,10 @@ def call(Closure body) {
     logs << "Start with tests"
     body()
     logs << "Done with tests"
-    writeFile(file: 'logGroovyFile.log', text: logs)
-    // logs.each { 
-        
-        // writeFile(file: 'logGroovyFile.log', text: "$readcontent\n$it\n")
-        // def readContent = readFile "logGroovyFile.log"
+    writeFile(file: 'logGroovyFile.log', text: logs.join("\n"))
+    // logs.each {
+    //     writeFile(file: 'logGroovyFile.log', text: "$readcontent\n$it\n")
+    //     def readContent = readFile "logGroovyFile.log"
     // }
     
 }
