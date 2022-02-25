@@ -1,12 +1,6 @@
-def call(Closure body) {
-    def logs = []
-    logs << "Start with tests"
+def call(Closure body, String log) {
     body()
-    logs << "Done with tests"
-    writeFile(file: 'logGroovyFile.log', text: logs.join("\n"))
-    // logs.each {
-    //     writeFile(file: 'logGroovyFile.log', text: "$readcontent\n$it\n")
-    //     def readContent = readFile "logGroovyFile.log"
-    // }
+    def filecontent = readFile 'logGroovyFile.log'
+    writeFile(file: 'logGroovyFile.log', text: filecontent+"\n${log}"))
     
 }
