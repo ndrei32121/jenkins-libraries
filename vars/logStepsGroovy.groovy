@@ -1,10 +1,6 @@
 def call(String log, Closure body) {
     body()
     def exists = fileExists 'logGroovyFile.log'
-    if (exists) {
-        def filecontent = readFile 'logGroovyFile.log'
-    } else {
-        def filecontent = ''
-    }
+    def filecontent = exists ? readFile 'logGroovyFile.log' : null
     writeFile(file: 'logGroovyFile.log', text: filecontent+"\n${log}")
 }
