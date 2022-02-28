@@ -1,4 +1,4 @@
-def call(Closure body, String log) {
+def call(String log, Closure body) {
     body()
     // def log = sh(script: "echo inside logStepsGroovy log func", returnStdout: true)
     def exists = fileExists 'logGroovyFile.log'
